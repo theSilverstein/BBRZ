@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function kopieren(){
+        let eigabe;
+        eigabe = document.getElementById("eigabe").value;
+        //alert(eigabe);
+        document.getElementById("ausgabe").value = eigabe;
+
+        }
+        function addieren(){
+            let wert1 = parseInt(document.getElementById("eigabe").value);
+            let wert2 = parseInt(document.getElementById("test").value);
+            let summe;
+            summe = wert1+ wert2;
+            document.getElementById("ausgabe").value = summe;
+
+
+        }
+
+        function zeichen1(){
+            let wert1 = document.getElementById("eigabe").value;
+            let teil = wert1.charAt(1);
+            alert(teil);
+        }
+
+        function zeichen2(){
+            let wert1 = document.getElementById("eigabe").value;
+            let teil = wert1.substring(2,3);
+            let laenge;
+            alert(teil);
+            laenge = teil.length;
+            alert(laenge);
+        }
+
+        function schleife1(){
+            for(let i=0; i<=5; i++){
+                alert(i);
+            }
+            for(let i = 5;i>=0; i--){
+                alert(i);
+            }
+        }
+        function ausgabe2(){
+            let wert1 = document.getElementById("eigabe").value;
+            document.getElementById("ausgabeAbsatz").innerHTML = wert1;
+        }
+
+        function divFormatieren(){
+            document.getElementById("kastl").style.width= "300px";
+            document.getElementById("kastl").style.height= "300px";
+            document.getElementById("kastl").style.backgroundColor = "darkred";
+        }
+
+    </script>
+</head>
+<body>
+    <label for="eigabe">Eingabe</label>
+    <input type="text" name="eigabe" id="eigabe"><br>
+    <label for="test">Test</label>
+    <input type="text" name="test" id="test"><br>
+    <label for="ausgabe">ausgabe</label>
+    <input type="text" name="ausgabe" id="ausgabe"><br>
+    <button onclick="kopieren()">Kopieren</button>
+    <button onclick="addieren()">Addieren</button>
+    <button onclick="zeichen1()">charAt</button>
+    <button onclick="zeichen2()">substring</button>
+    <button onclick="schleife1()">For-schleife</button><br>
+    <button onclick="ausgabe2()">Ausgabe in p-Tag </button>
+    <button onclick="divFormatieren()">DIV- Formatieren </button>
+
+    <br>
+    <br>
+    <p id="ausgabeAbsatz">da kommt die ausgabe hin...</p>
+    <br>
+    <div id="kastl">
+        Neues Kastl
+    </div>
+
+</body>
+</html>
