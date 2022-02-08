@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>   
+      <meta charset="utf-8">
+      <title>Pflanzen</title>
+      <style>
+		table {border: solid black 2px;}
+      </style>
+  </head>
+   <table>
+    <form action="musik.php" method="post" >		
+		<tr><td><label> Nr </label> </td> <td><input type="text" name="nr"></td></tr>
+		<tr><td><label> Interpret </label></td> <td><input type="text" name="interpret"></td></tr>
+		<tr><td><label> Titel </label></td> <td><input type="text" name="titel"></td></tr>
+		<tr><td><label> Preis </label></td> <td><input type="text" name="preis"></td></tr>
+<!--
+		<tr><td><label> e-Mail </label></td> <td><input type="text" name="email"></td></tr>
+-->
+		<tr><td> Auswahl </td> <td>
+		<select name="action" size="4">
+			<option selected> Anzeige </option>
+			<option> Einfuegen  </option>
+			<option> Aendern </option>
+			<option> Loeschen </option>
+		</select> </td></tr> 
+       <tr><td><input type="submit">   </td> <td>	<input type="reset"></tr>
+
+    </form>
+	</table>
+  </body>
+
+</html>

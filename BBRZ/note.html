@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>   
+      <meta charset="utf-8">
+      <title>Noten</title>
+      <style>
+		table {border: solid black 2px;}
+      </style>
+  </head>
+   <table>
+    <form action="note.php" method="post" >		
+		<tr><td><label> Nr </label> </td> <td><input type="text" name="nr"></td></tr>
+		<tr><td><label> Unterrichtsfach </label></td> <td><input type="text" name="unterrichtsfach"></td></tr>
+		<tr><td><label> Note </label></td> <td><input type="text" name="note"></td></tr>
+
+<!--
+		<tr><td><label> e-Mail </label></td> <td><input type="text" name="email"></td></tr>
+-->
+		<tr><td> Auswahl </td> <td>
+		<select name="action" size="4">
+			<option selected> Anzeige </option>
+			<option> Einfuegen  </option>
+			<option> Aendern </option>
+			<option> Loeschen </option>
+		</select> </td></tr> 
+       <tr><td><input type="submit">   </td> <td>	<input type="reset"></tr>
+
+    </form>
+	</table>
+  </body>
+
+</html>
