@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>    
+        function berechnen(){
+            let tage = parseInt(document.getElementById("tage").value);
+            let person = parseInt(document.getElementById("person").value);
+            if(document.getElementById("mitVer").checked) {
+                let ausgabe;
+                ausgabe = tage * person + 5*person;
+                document.getElementById("ausgabe").value = ausgabe;
+
+            }else if(document.getElementById("ohneVer").checked) {
+                let ausgabe;
+                ausgabe = tage * person;
+                document.getElementById("ausgabe").value = ausgabe;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Berechnen Sie den Preis</h2>
+    <select name="tage" id="tage">
+        <option value="49">1 Tag</option>
+        <option value="97">2 Tage</option>
+        <option value="145">3 Tage</option>
+      </select>
+      <br>
+    <!-- input numeric -->
+    <label for="person">Anzahl Personen</label>
+    <select name="person" id="person">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+        <fieldset>
+
+        <input type="radio" id="mitVer" name="versicherung" checked>
+        <label for="mitVer">Mit Versicherung</label>
+            <br>
+        <input type="radio" id="ohneVer" name="versicherung" >
+        <label for="ohneVer">Ohne Versicherung</label>
+
+    </fieldset>
+      <br>
+      <label for="ausgabe">Gesamtsumme</label>
+      <input type="text" name="ausgabe" id="ausgabe"><br>
+
+      <button onclick="berechnen()">Berechnen</button>
+
+</body>
+</html>

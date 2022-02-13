@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> function ausgabe(){
+        let eingabe;
+        eingabe = document.getElementById("feld1").value;
+        let ausgabe = eingabe.length;
+        document.getElementById("feld2").value = ausgabe;
+    }
+
+    </script>
+</head>
+<body>
+    <h3>Ein Formular</h3>
+
+    <label for="feld1"></label>
+    <input type="text" name="feld1" id="feld1"> <br>
+    <label for="feld2"></label>
+    <input type="text" name="feld2" id="feld2"> <br>
+    <button onclick="ausgabe()">Ausgabe</button>
+
+</body>
+</html>

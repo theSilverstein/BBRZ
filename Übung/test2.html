@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JsBarcode.all.min.js"></script>
+    <script>
+        function ausgabe2(){
+        let eingabe;
+        eingabe = document.getElementById("eingabe").value;
+        eingabe = eingabe.replace(/\ /g, "");
+        let summe = 0;
+            for(let i = 1; i<= eingabe.length-1; i++){
+                if (i %2 != 0) {
+                    let ziffer = parseInt(eingabe.charAt(i-1));
+                    let zahl = ziffer*2;
+                    summe = summe + zahl;
+                } else {
+                    summe = summe + parseInt(eingabe.charAt(i-1));
+                }
+            }
+        let pruefzahl = summe % 10;
+        let pruefzahlFertig = 10-pruefzahl;
+        if(eingabe.charAt(eingabe.length-1) == pruefzahlFertig){
+            JsBarcode("#barcode", "Prüfziffer stimmt überein");
+        }
+        else{
+            JsBarcode("#barcode", "Prüfziffer stimmt nicht überein");
+            //keine Ü's verwenden
+        }
+
+
+    }
+    </script>
+</head>
+<body>
+    <h2>Übung</h2>
+    <label for="eingabe">Eingabe</label>
+    <input type="text" name="eingabe" id="eingabe"><br>
+    <button onclick="ausgabe2()">Ausgabe</button>
+    <svg id="barcode"></svg>
+</body>
+</html>

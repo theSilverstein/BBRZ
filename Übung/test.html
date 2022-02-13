@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ausgabe(){
+            let eingabe;
+        eingabe = document.getElementById("eingabe").value;
+        let zahlen;
+        zahlen = eingabe.replace(/\-/g, "");
+        let summe = 0;
+        for(let i = 0; i<= zahlen.length-1; i++){
+            ziffer = parseInt(zahlen.charAt(i));
+            let zahl = ziffer *(i+1);
+            summe = summe + zahl;
+        }
+        let pruefzahl = summe % 11;
+        if (pruefzahl == 10) {
+            let ausgabe = eingabe + "-X";
+            document.getElementById("ausgabe").value = ausgabe;
+        } else {
+            let ausgabe = eingabe + "-" + pruefzahl.toString();
+            document.getElementById("ausgabe").value = ausgabe;
+        }
+        }
+
+        function ausgabe2(){
+        let eingabe;
+        eingabe = document.getElementById("eingabe").value;
+        let summe = 0;
+            for(let i = 1; i<= eingabe.length; i++){
+                if (i %2 == 0) {
+                    let ziffer = parseInt(eingabe.charAt(i-1));
+                    let zahl = ziffer*3;
+                    summe = summe + zahl;
+
+                } else {
+                    summe = summe + parseInt(eingabe.charAt(i-1));
+                }
+            }
+        let pruefzahl = summe % 10;
+        alert(pruefzahl);
+        let ausgabe = eingabe + pruefzahl;
+        document.getElementById("ausgabe").value = ausgabe;
+    }
+        
+    </script>
+</head>
+<body>
+    <h2>Übung</h2>
+    <label for="eingabe">Eingabe</label>
+    <input type="text" name="eingabe" id="eingabe"><br>
+    <label for="ausgabe">Ausgabe</label>
+    <input type="text" name="ausgabe" id="ausgabe"><br>
+    <button onclick="ausgabe()">Ausgabe ISBN</button>
+    <button onclick="ausgabe2()">Ausgabe EAN</button>
+</body>
+</html>
